@@ -119,7 +119,7 @@
 1. Clone the repo
 
    ```sh
-   git clone git@github.com:harjotscs/Invictus-assignment.git
+   git clone git@github.com:Rohitszx/Invictus_assignment.git
    ```
 
 2. Install NPM packages enter below command on the terminal
@@ -141,7 +141,7 @@
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
-[1]: test_case/test_case1.png
-[2]: test_case/test_case2.png
-[3]: test_case/test_case3.png
-[4]: test_case/test_case4.png
+[test_case1]: test_case/test_case1.png
+[test_case2]: test_case/test_case2.png
+[test_case3]: test_case/test_case3.png
+[test_case4]: test_case/test_case4.png

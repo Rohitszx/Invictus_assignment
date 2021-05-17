@@ -1,5 +1,5 @@
 <p align="center">
-  <h3 align="center">Invictus Assignment</h3>
+  <h1 align="center">Invictus Assignment</h1>
 
   <p align="center">
     The project is implemented using React js library without using any add-on dependency.
@@ -110,8 +110,6 @@
 
 ## Getting Started
 
-To get a local copy up and running follow these simple steps.
-
 ### Prerequisites
 
 - Make sure you have node js installed on your system.
@@ -142,17 +140,17 @@ To get a local copy up and running follow these simple steps.
 
 1. Testcase 1:
 
-[![Invictus Frontend ScreenShot][1]](https://invictuszx.netlify.app/)
+[![Assignment ScreenShot][test_case1]](https://invictuszx.netlify.app/)
 
 2. Testcase 2:
 
 
-[![Invictus Frontend ScreenShot][2]](https://invictuszx.netlify.app/)
+[![Assignment ScreenShot][test_case2]](https://invictuszx.netlify.app/)
 
 3. Testcase 3:
 
 
-[![Invictus Frontend ScreenShot][3]](https://invictuszx.netlify.app/)
+[![Assignment ScreenShot][test_case3]](https://invictuszx.netlify.app/)
 
 _Screenshots of all testcases are in [testcases folder](test_case)_
 

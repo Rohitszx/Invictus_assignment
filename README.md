@@ -140,18 +140,18 @@
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <div align="center">
-  1.
+
     <img src="test_case/test_case1.png"</img> 
 </div>
 <div align="center">
-  2.
+
     <img src="test_case/test_case2.png"</img> 
 </div>
 <div align="center">
-  3.
+
     <img src="test_case/test_case3.png"</img> 
 </div>
 <div align="center">
-  4.
+
     <img src="test_case/test_case4.png"</img> 
 </div>

@@ -142,34 +142,19 @@ To get a local copy up and running follow these simple steps.
 
 1. Testcase 1:
 
-- Data: 4
-- Output:
-
-[![Invictus Frontend ScreenShot][1]](https://harjot-invictus.netlify.app/)
+[![Invictus Frontend ScreenShot][1]](https://invictuszx.netlify.app/)
 
 2. Testcase 2:
 
-- Data: 6
-- Output:
 
-[![Invictus Frontend ScreenShot][2]](https://harjot-invictus.netlify.app/)
+[![Invictus Frontend ScreenShot][2]](https://invictuszx.netlify.app/)
 
 3. Testcase 3:
 
-- Data: 12
-- Output:
 
-[![Invictus Frontend ScreenShot][3]](https://harjot-invictus.netlify.app/)
+[![Invictus Frontend ScreenShot][3]](https://invictuszx.netlify.app/)
 
-_Screenshots of all testcases are in [testcases folder](testcases)_
-
-<!-- CONTACT -->
-
-## Contact
-
-Harjot Singh - harjotscs@gmail.com
-
-Project Link: [https://github.com/harjotscs/Invictus-assignment](https://github.com/harjotscs/Invictus-assignment)
+_Screenshots of all testcases are in [testcases folder](test_case)_
 
 <!-- MARKDOWN LINKS & IMAGES -->
 

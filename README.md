@@ -138,25 +138,10 @@
 
 ## Testcases
 
-1. Testcase 1:
-
-[![Assignment ScreenShot][test_case1]](https://invictuszx.netlify.app/)
-
-2. Testcase 2:
-
-
-[![Assignment ScreenShot][test_case2]](https://invictuszx.netlify.app/)
-
-3. Testcase 3:
-
-
-[![Assignment ScreenShot][test_case3]](https://invictuszx.netlify.app/)
-
-_Screenshots of all testcases are in [testcases folder](test_case)_
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
-[1]: testcases/1.png
-[2]: testcases/2.png
-[3]: testcases/3.png
-[4]: testcases/4.png
+[1]: test_case/test_case1
+[2]: test_case/test_case2
+[3]: test_case/test_case3
+[4]: test_case/test_case4

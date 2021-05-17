@@ -27,7 +27,6 @@
       </ul>
     </li>
     <li><a href="#testcases">Test Cases</a></li>
-    <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
 
@@ -140,7 +139,9 @@
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-
+<div align="center">
+    <img src="test_case/test_case1.png" width="400px"</img> 
+</div>
 [test_case1]: test_case/test_case1.png
 [test_case2]: test_case/test_case2.png
 [test_case3]: test_case/test_case3.png

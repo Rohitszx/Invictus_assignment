@@ -141,7 +141,7 @@
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
-[1]: test_case/test_case1
-[2]: test_case/test_case2
-[3]: test_case/test_case3
-[4]: test_case/test_case4
+[1]: test_case/test_case1.png
+[2]: test_case/test_case2.png
+[3]: test_case/test_case3.png
+[4]: test_case/test_case4.png

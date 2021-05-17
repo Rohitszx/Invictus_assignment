@@ -1,70 +1,179 @@
-# Getting Started with Create React App
+<p align="center">
+  <h3 align="center">Invictus Assignment</h3>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <p align="center">
+    The project is implemented using React js library without using any add-on dependency.
+    <br />
+    <br />
+    <a href="https://invictuszx.netlify.app/">Click Here For Live Demo</a>
+  </p>
+</p>
 
-## Available Scripts
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#testcases">Test Cases</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-In the project directory, you can run:
+<!-- ABOUT THE PROJECT -->
 
-### `yarn start`
+## About The Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- The Styling in the frontend is done with CSS from scratch, no external CSS library/framework is used.
+- The Web App is split into two main components SearchBox and Table
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- After entering the the value of N in the Input Box, If N is negative number it will be automatically converted to positive number using Math.abs() function.
 
-### `yarn test`
+  ```sh
+   onChange={(event) => {
+          const num = Math.abs(event.target.value);
+          setNumber(num);
+        }}
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  ```
 
-### `yarn build`
+- On clicking submit if no number or 0 is entered, It will send an alert "Please Enter A Valid Number First" else a spinner will be shown on the button and handleClick function will be called.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  ```sh
+   onClick={() => {
+          number === "" || number === 0
+            ? alert("Please Enter A Valid Number First")
+            : handleClick(number);
+        }}
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- After this handleClick function in app.js will be called, which calls fetchData function (defined in src/helpers/index.js) which return text found on the url then sanitizeString function is called which converts the whole string to lower case and then replaces '-' '.' ',' with a space and replaces any double space with single space. So that the words can be seperated from , or . or - and these characters doesn't count as words. Then split the whole text into words based on spaces and Remove any space after spliting, if any. and return the array of words.
 
-### `yarn eject`
+  ```sh
+  const sanitizeString = (data) => {
+    const regex = /[-.,]/g;
+    data = data
+      .toLowerCase()
+      .replace(/\s+/g, " ")
+      .replace(regex, "")
+      .split(" ")
+      .filter((word) => word.trim().length > 0);
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    return data;
+  };
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Then control comes back to handleClick function where it proceeds with calculateFrequencies function to calculate the frequency of all the words and return the array of frequencies of all words in descending order back to handleClick where it splices the array to the entered number(N) and update the initial state of table data with the help of useState hook.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  ```sh
+  const calculateFrequencies = (words) => {
+    var freq = {};
+    words.forEach((word) => {
+      if (!freq[word]) {
+        freq[word] = 0;
+      }
+      freq[word] += 1;
+    });
+    const computed = Object.entries(freq).sort((a, b) => b[1] - a[1]);
+    return computed;
+  };
 
-## Learn More
+  //inside app.js
+  setTableData(calculateFrequencies(data).splice(0, number));
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- This data is passed as props to the Table.
 
-### Code Splitting
+  ```sh
+  <Table tableData={tableData}/>
+  ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Built With
 
-### Analyzing the Bundle Size
+- [React.Js](https://reactjs.org/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<!-- GETTING STARTED -->
 
-### Making a Progressive Web App
+## Getting Started
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+To get a local copy up and running follow these simple steps.
 
-### Advanced Configuration
+### Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Make sure you have node js installed on your system.
 
-### Deployment
+### Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Clone the repo
 
-### `yarn build` fails to minify
+   ```sh
+   git clone git@github.com:harjotscs/Invictus-assignment.git
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2. Install NPM packages enter below command on the terminal
+
+   ```sh
+   npm install
+   ```
+
+3. To run thd app enter below command on the terminals
+
+   ```sh
+   npm start
+   ```
+
+<!-- Testcases -->
+
+## Testcases
+
+1. Testcase 1:
+
+- Data: 4
+- Output:
+
+[![Invictus Frontend ScreenShot][1]](https://harjot-invictus.netlify.app/)
+
+2. Testcase 2:
+
+- Data: 6
+- Output:
+
+[![Invictus Frontend ScreenShot][2]](https://harjot-invictus.netlify.app/)
+
+3. Testcase 3:
+
+- Data: 12
+- Output:
+
+[![Invictus Frontend ScreenShot][3]](https://harjot-invictus.netlify.app/)
+
+_Screenshots of all testcases are in [testcases folder](testcases)_
+
+<!-- CONTACT -->
+
+## Contact
+
+Harjot Singh - harjotscs@gmail.com
+
+Project Link: [https://github.com/harjotscs/Invictus-assignment](https://github.com/harjotscs/Invictus-assignment)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[1]: testcases/1.png
+[2]: testcases/2.png
+[3]: testcases/3.png
+[4]: testcases/4.png
